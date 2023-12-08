@@ -1,8 +1,8 @@
 pipeline {
 	agent any 
-	parameters {
-		choice(name: 'ENVIRONMENT', choices: ['QA','UAT'], description: 'Pick Environment value')
-	}
+	triggers {
+  pollSCM '* * * * *'
+}
 	stages {
 	    stage('Checkout') {
 	        steps {
@@ -10,10 +10,10 @@ pipeline {
 		      }}
 		stage('Build') {
 	           steps {
-			  sh '/home/guru/slaveDD2/apache-maven-3.9.0/bin/mvn install'
+			  sh '/home/tushar28/Downloads/apache-maven-3.9.5/bin/bin/mvn install'
 	                 }}
 		stage('Deployment'){
 		   steps {
-		sh 'cp target/flipkart.war /home/swapnil/Documents/DevOps-Software/apache-tomcat-9.0.79/webapps'
+		sh 'cp target/butibori.war /home/tushar28/Downloads/apache-tomcat-9.0.82/webapps'
 			}}	
 }}
