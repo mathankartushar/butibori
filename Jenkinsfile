@@ -1,5 +1,9 @@
 pipeline {
 	agent any 
+	parameters {
+  choice choices: ['haircut', 'beard', 'massage'], name: 'saloon'
+}
+
 	triggers {
   pollSCM '* * * * *'
 }
