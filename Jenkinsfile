@@ -14,6 +14,6 @@ pipeline {
 	                 }}
 		stage('Deployment'){
 		   steps {
-		sh 'cp target/maxlife.war /home/tushar28/Downloads/apache-tomcat-9.0.82/webapps'
+		sh 'cp target/butibori.war /home/tushar28/Downloads/apache-tomcat-9.0.82/webapps'
 			}}	
 }}
